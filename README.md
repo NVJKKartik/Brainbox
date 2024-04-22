@@ -23,9 +23,8 @@ together ai quite a bit.
 
 #### Step 1
 
-If you're using Windows, see this [install note](https://github.com/AndrewVeee/nucleo-ai/issues/4#issuecomment-1948396167).
 ```
-$ git clone git@github.com:AndrewVeee/nucleo-ai.git
+$ git clone 
 
 # Create python venv, install torch cpu-only and requirements.txt. Copy config file.
 $ ./setup.sh
@@ -37,7 +36,7 @@ Edit the config file in `./data/config.toml`
 
 Find the `[llm]` block and set your `openai_base_url` (something like http://localhost:5000/v1) and
 the `openai_api_key` if required. You can also set the `secret_key` at the top if you want to require auth to
-connect to Nucleo.
+connect to BrainBox.
 
 #### Step 3
 
@@ -48,17 +47,13 @@ Once the app has started, you will see a line like:
 
 ` * Running on http://127.0.0.1:4742`
 
-Open the link in your browser to start using Nucleo!
-
-#### Step 4
-
-Share your initial feedback on [r/nucleoai](https://www.reddit.com/r/nucleoai/) if you have time - it will help improve the app!
+Open the link in your browser to start using BrainBox!
 
 ### Features
 
 #### Regular Chat
 
-Nucleo supports regular chat. You can create multiple chats, and choose saved or
+BrainBox supports regular chat. You can create multiple chats, and choose saved or
 temporary (throwaway) chat when you create it.
 
 #### Assistant
@@ -122,16 +117,14 @@ I have some ideas I really want to try:
 
 ### Developers
 
-My long term goal for Nucleo is a platform that helps developers build and test ideas and make them available
-to others to try easily. I'm not a fan of most LLM frameworks, so I'd prefer Nucleo as a collection of tools
-that you can pick and choose as you need.
-
+Our long term goal for BrainBox is a platform that helps developers build and test ideas and make them available
+to others to try easily.
 The code is pretty messy, but here are some key points to play around:
 
 - You can take a look at `app/functions/functions.py` if you want to add your own function.
-- Nucleo is API-first. You can connect to it at `/api/v1/chat/completions` with an OpenAI
+- BrainBox is API-first. You can connect to it at `/api/v1/chat/completions` with an OpenAI
   client.
-- Nucleo uses "virtual" models. You can set the model to 'assistant' to chat in assistant mode,
+- BrainBox uses "virtual" models. You can set the model to 'assistant' to chat in assistant mode,
   'chat' to chat in basic mode, or 'message' to summarize messages.
 - With chat mode, you can also append a message with {'role': 'config', 'content': '{"rag": true}'}
   to enable RAG in the chat.
@@ -145,7 +138,4 @@ There's so much work to do. I'm happy to help if you want to contribute.
 
 Need help?
 
-I've set up a subreddit to discuss issues and ideas:
-https://www.reddit.com/r/nucleoai/
-
-You can post in the issues tab as well, but the community might give a faster response.
+You can post in the issues tab, but the community might give a faster response.
